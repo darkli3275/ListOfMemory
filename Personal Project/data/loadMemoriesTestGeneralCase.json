@@ -1,0 +1,16 @@
+{
+  "memoryList": [
+    {
+      "title": "test one",
+      "description": "",
+      "location": "",
+      "date": "01/01/2000"
+    },
+    {
+      "title": "test two",
+      "description": "this is a test",
+      "location": "UBC Vancouver",
+      "date": "01/01/2000"
+    }
+  ]
+}
