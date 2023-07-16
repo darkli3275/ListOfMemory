@@ -1,12 +1,14 @@
 package ui;
 
+import model.Memories;
+import model.Memory;
+
+import javax.swing.*;
+import java.awt.*;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.io.FileNotFoundException;
-import javax.swing.*;
-import java.awt.*;
-import model.Memories;
-import model.Memory;
+
 import static ui.ScrapbookApp.*;
 
 // A page displaying all memories of a list
@@ -64,20 +66,29 @@ public class MemoriesPage {
     // MODIFIES: this
     // EFFECTS: Creates and adds buttons to pane
     private void setUpButtons() {
-        JButton backToWelcomeButton = createSmallButton("Back", horzBorder, vertBorder);
+        JButton backToWelcomeButton = createSmallButton("Back",
+                horzBorder,
+                vertBorder);
         backToWelcomeButton.addActionListener(e -> new WelcomePage(frame));
 
-        JButton addNewMemoryButton = createSmallButton("+", WIDTH - horzBorder, vertBorder);
+        JButton addNewMemoryButton = createSmallButton("+",
+                WIDTH - horzBorder - smallButtonWidth / 2,
+                vertBorder);
         addNewMemoryButton.addActionListener(e -> addNewMemory());
 
-        JButton prevButton = createSmallButton("Prev", horzBorder, HEIGHT - vertBorder - HEIGHT / 20);
+        JButton prevButton = createSmallButton("Prev",
+                horzBorder,
+                HEIGHT - vertBorder - HEIGHT / 20 - smallButtonHeight / 2);
         prevButton.addActionListener(e -> displayPrevMemories());
 
         JButton nextButton = createSmallButton("Next",
-                WIDTH - horzBorder, HEIGHT - vertBorder - HEIGHT / 20);
+                WIDTH - horzBorder - smallButtonWidth / 2,
+                HEIGHT - vertBorder - smallButtonHeight / 2 - HEIGHT /20);
         nextButton.addActionListener(e -> displayNextMemories());
 
-        JButton saveButton = createSmallButton("Save", WIDTH / 2, HEIGHT - vertBorder - HEIGHT / 20);
+        JButton saveButton = createSmallButton("Save",
+                WIDTH / 2,
+                HEIGHT - vertBorder - smallButtonHeight / 2 - HEIGHT / 20);
         saveButton.addActionListener(e -> saveButtonAction());
 
         pane.add(saveButton);
@@ -124,8 +135,8 @@ public class MemoriesPage {
         JLabel saveConfirmation = new JLabel("Successfully Saved!", JLabel.CENTER);
         saveConfirmation.setFont(new Font(saveConfirmation.getFont().getFontName(), Font.PLAIN, 20));
         saveConfirmation.setOpaque(true);
-        saveConfirmation.setBounds(WIDTH / 2 - WIDTH / 6, HEIGHT - HEIGHT / 50 - 60 - HEIGHT / 10,
-                WIDTH / 3, HEIGHT / 10);
+        saveConfirmation.setBounds(WIDTH / 4, HEIGHT - HEIGHT / 50 - 60 - HEIGHT / 10,
+                WIDTH / 2, HEIGHT / 10);
         pane.add(saveConfirmation);
     }
 
@@ -136,8 +147,8 @@ public class MemoriesPage {
                 JLabel.CENTER);
         saveConfirmation.setFont(new Font(saveConfirmation.getFont().getFontName(), Font.PLAIN, 20));
         saveConfirmation.setOpaque(true);
-        saveConfirmation.setBounds(WIDTH / 2 - WIDTH / 6, HEIGHT - HEIGHT / 50 - 60 - HEIGHT / 10,
-                WIDTH / 3, HEIGHT / 10);
+        saveConfirmation.setBounds(WIDTH / 4, HEIGHT - HEIGHT / 50 - 60 - HEIGHT / 10,
+                WIDTH / 2, HEIGHT / 10);
         pane.add(saveConfirmation);
     }
 

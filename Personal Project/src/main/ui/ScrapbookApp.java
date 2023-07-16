@@ -1,25 +1,27 @@
 package ui;
 
 import model.EventLog;
-import java.awt.event.*;
-import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.awt.Font;
-import javax.swing.*;
 import model.Memories;
 import persistence.Loader;
 import persistence.Saver;
+
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
+import java.io.FileNotFoundException;
+import java.io.IOException;
 
 // Scrapbook application
 public class ScrapbookApp {
 
     protected static final int WIDTH = 1280;                                    // WIDTH >= 0
     protected static final int HEIGHT = 720;                                    // HEIGHT >= 0
-    protected static int smallButtonWidth = WIDTH / 20;                         // smallButtonWidth >= 0
-    protected static int smallButtonHeight = HEIGHT / 20;                       // smallButtonHeight >= 0
+    protected static int smallButtonWidth = WIDTH / 15;                         // smallButtonWidth >= 0
+    protected static int smallButtonHeight = HEIGHT / 15;                       // smallButtonHeight >= 0
     protected static final int horzBorder = WIDTH / 25;                         // horzBorder >= 0
     protected static final int vertBorder = HEIGHT / 25;                        // vertBorder >= 0
-    private static final String SAVE_LOCATION = "./data/SavedMemories.json";
+    private static final String SAVE_LOCATION = "Personal Project/data/SavedMemories.json";
     private JFrame frame;
     protected static JLabel bg;
 

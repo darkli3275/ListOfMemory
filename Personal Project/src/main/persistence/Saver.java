@@ -1,10 +1,11 @@
 package persistence;
 
-import org.json.JSONObject;
-import java.io.*;
 import model.Memories;
+import org.json.JSONObject;
 
-// Code referenced: https://github.students.cs.ubc.ca/CPSC210/JsonSerializationDemo.git
+import java.io.FileNotFoundException;
+import java.io.PrintWriter;
+
 // Represents a saver which can save a JSON representation of memories to a file
 public class Saver {
     private String saveLocation;

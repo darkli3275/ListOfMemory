@@ -1,9 +1,11 @@
 package ui;
 
+import model.Memories;
+import model.Memory;
+
 import javax.swing.*;
 import java.awt.*;
-import model.Memory;
-import model.Memories;
+
 import static ui.ScrapbookApp.*;
 
 // A page displaying a memory
@@ -139,7 +141,7 @@ public class MemoryPage {
         backToMemoriesButton.addActionListener(e -> new MemoriesPage(frame, loadedMemories, memoryIndex));
 
         JButton deleteButton = createSmallButton("Del",
-                WIDTH - horzBorder, HEIGHT - vertBorder - smallButtonHeight);
+                WIDTH - horzBorder - smallButtonWidth / 2, HEIGHT - vertBorder - smallButtonHeight);
         deleteButton.addActionListener(e -> handleMemoryDeleted(memoryIndex));
 
         pane.add(backToMemoriesButton);
