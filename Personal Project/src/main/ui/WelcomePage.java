@@ -36,7 +36,7 @@ public class WelcomePage {
     // EFFECTS: Loads and adds a background to pane
     private void setUpBg() {
         // Background Image
-        bg = new JLabel(new ImageIcon("./data/WelcomeImage.jpg"), JLabel.CENTER);
+        bg = new JLabel(new ImageIcon("Personal Project/data/WelcomeImage.jpg"), JLabel.CENTER);
         bg.setOpaque(true);
         bg.setBounds(0, 0, WIDTH, HEIGHT);
         pane.add(bg);
